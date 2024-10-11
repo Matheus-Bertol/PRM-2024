@@ -17,7 +17,7 @@ import { Movie } from './entities/movie-entity';
       username: process.env.DB_USER,
       password: process.env.DB_PASS,
       database: process.env.DB_NAME,
-      entities: [],
+      entities: [Movie],
       synchronize: true,
     }),
   TypeOrmModule.forFeature([Movie]),
