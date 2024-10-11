@@ -1,6 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+import { MovieController } from './controlers/movie-controller';
+import { MovieService } from './services/movie-service';
+import { Movie } from './entities/movie-entity';
 
 @Module({
   imports: [
@@ -17,6 +20,9 @@ import { ConfigModule } from '@nestjs/config';
       entities: [],
       synchronize: true,
     }),
+  TypeOrmModule.forFeature([Movie]),
   ],
+  controllers:[MovieController],
+  providers:[MovieService],
 })
 export class AppModule {}
