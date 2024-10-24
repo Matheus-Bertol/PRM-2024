@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from "@nestjs/common";
+import { Controller, Get, HttpException, HttpStatus, Param } from "@nestjs/common";
 import { Movie } from "src/entities/movie-entity";
 import { MovieService } from "src/services/movie-service";
 
@@ -14,8 +14,18 @@ export class MovieController{
     }
 
     @Get(':id')
-    findById( @Param('id') id: string): Promise<Movie>{
-        return this.service.findById(id);
+    async findById( @Param('id') id: string): Promise<Movie>{
+        const found = this.service.findById(id);
+    
+        if(!found) {
+
+            throw new HttpException('Movie not found', HttpStatus.NOT_FOUND)
+
+
+        }
+    
+        return found;
+
     }
 
 }

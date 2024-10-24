@@ -25,4 +25,4 @@ import { Movie } from './entities/movie-entity';
   controllers:[MovieController],
   providers:[MovieService],
 })
-export class AppModule {}
+export class AppModule {} 
