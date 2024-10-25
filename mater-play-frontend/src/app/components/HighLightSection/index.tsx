@@ -46,7 +46,6 @@ function HighLightSection() {
             <Typography
               variant="body2"
             >
-              House of the Dragon é um spin-off de Game of Thrones, que se passa 200 anos antes dos eventos da série original. A trama acompanha a ascensão e a queda da Casa Targaryen, focando nas disputas de poder que levam à guerra civil conhecida como a Dança dos Dragões.House of the Dragon é um spin-off de Game of Thrones, que se passa 200 anos antes dos eventos da série original. A trama acompanha a ascensão e a queda da Casa Targaryen, focando nas disputas de poder que levam à guerra civil conhecida como a Dança dos Dragões.
             </Typography>
             <Stack
               gap={1}
