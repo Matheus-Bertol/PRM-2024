@@ -4,6 +4,9 @@ import { ConfigModule } from '@nestjs/config';
 import { MovieController } from './controlers/movie-controller';
 import { MovieService } from './services/movie-service';
 import { Movie } from './entities/movie-entity';
+import { CategoryService } from './services/category-service';
+import { CategoryController } from './controlers/category-controller';
+import { Category } from './entities/category-entity';
 
 @Module({
   imports: [
@@ -17,12 +20,12 @@ import { Movie } from './entities/movie-entity';
       username: process.env.DB_USER,
       password: process.env.DB_PASS,
       database: process.env.DB_NAME,
-      entities: [Movie],
+      entities: [Movie, Category],
       synchronize: true,
     }),
-  TypeOrmModule.forFeature([Movie]),
+  TypeOrmModule.forFeature([Movie, Category]),
   ],
-  controllers:[MovieController],
-  providers:[MovieService],
+  controllers:[MovieController, CategoryController],
+  providers:[MovieService, CategoryService],
 })
 export class AppModule {} 
