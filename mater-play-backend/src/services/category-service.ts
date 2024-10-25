@@ -1,6 +1,8 @@
+import { API } from './../../../mater-play-frontend/src/app/@libs/axios/index';
 import { InjectRepository } from "@nestjs/typeorm";
 import { Category } from "src/entities/category-entity";
 import { Repository } from "typeorm";
+import { ICategory } from '../../../mater-play-frontend/src/app/@libs/types';
 
 export class CategoryService{
 

@@ -5,3 +5,9 @@ export interface IMovie{
     ageRating: string;
     poster: string;
 }
+
+export interface ICategory{ 
+    id?: number; 
+    name: string; 
+    active: boolean;
+}

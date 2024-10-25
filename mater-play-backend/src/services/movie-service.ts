@@ -1,3 +1,4 @@
+import { IMovie } from './../../../mater-play-frontend/src/app/@libs/types/index';
 import { InjectRepository } from "@nestjs/typeorm";
 import { Movie } from "src/entities/movie-entity";
 import { Repository } from "typeorm";
