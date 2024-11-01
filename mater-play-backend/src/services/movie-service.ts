@@ -1,29 +1,39 @@
-import { IMovie } from './../../../mater-play-frontend/src/app/@libs/types/index';
-import { InjectRepository } from "@nestjs/typeorm";
-import { Movie } from "src/entities/movie-entity";
-import { Repository } from "typeorm";
+import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Category } from 'src/entities/category-entity';
+import { Movie } from 'src/entities/movie-entity';
+import { Repository } from 'typeorm';
 
-export class MovieService{
+@Injectable()
+export class MovieService {
+  constructor(
+    @InjectRepository(Movie)
+    private repository: Repository<Movie>,
+  ) {}
 
-    constructor(
-        @InjectRepository(Movie)
-        private repository: Repository<Movie>
-    ) {}
+  findAll(): Promise<Movie[]> {
+    return this.repository.find();
+  }
 
-    findAll(): Promise <Movie[]> {
-        return this.repository.find();
-    }
-    
-    findById(id: string): Promise <Movie> {
-        return this.repository.findOneBy({id: id});
-    }
+  findById(id: string): Promise<Movie> {
+    return this.repository.findOneBy({ id: id });
+  }
+  
+  findByCategory(category: Category): Promise<Movie[]> {
+    return this.repository.find({
+      where: {
+        categories: {
+          id: category.id,
+        }
+      }
+    });
+  }
 
-    save(category: Movie): Promise<Movie>{
-        return this.repository.save(category);
-    }
+  save(movie: Movie): Promise<Movie> {
+    return this.repository.save(movie);
+  }
 
-    async remove(id: string): Promise<void>{
-        await this.repository.delete(id);
-    }
-
+  async remove(id: string): Promise<void> {
+    await this.repository.delete(id);
+  }
 }

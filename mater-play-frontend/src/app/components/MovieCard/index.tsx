@@ -1,28 +1,27 @@
-import { Paper } from "@mui/material"
+import { Paper } from "@mui/material";
 
 type MovieCardProps = {
-    poster ?: string;
+  poster?: string;
 }
-
-
 function MovieCard({
-    poster
-}: MovieCardProps) { 
-    return(
-        <Paper
-        component="a"
-        elevation={0}
-        href="/1"
-        sx={{
-            minWidth: '10rem'
-        }}>
-            <img src={poster}
-            style={{width:'100%'
-                
-            }}
-            />
-        </Paper>
-    )
+  poster
+}: MovieCardProps) {
+  return (
+    <Paper
+      component="a"
+      elevation={0}
+      href="/1"
+      sx={{
+        minWidth: '10rem'
+      }}
+    >
+      <img src={ poster }
+        style={{
+          width: '100%'
+        }}
+      />
+    </Paper>
+  )
 }
 
-export default MovieCard
+export default MovieCard;

@@ -46,6 +46,7 @@ function HighLightSection() {
             <Typography
               variant="body2"
             >
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum maxime pariatur numquam deserunt ea veritatis, consectetur nam porro provident consequuntur, debitis fugit dolores nobis distinctio, alias ex modi harum doloribus?
             </Typography>
             <Stack
               gap={1}
